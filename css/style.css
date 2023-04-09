@@ -1,0 +1,71 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html {
+  color-scheme: light ;
+}
+
+body {
+  min-height: 100vh;
+}
+
+img, picture, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+/* fine reset */
+
+:root {
+  --fs-400: 2rem;
+  --fs-600: 3rem;
+  --clr-primary: hsl(347, 54%, 48%);
+  --clr-secondary: white;
+  --clr-tertiary: hsl(0, 0%, 85%);
+
+  --fs-button: var(--fs-400);
+  --fs-link: var(--fs-400);
+  --fs-title: var(--fs-600);
+  
+  --clr-link: var(--clr-primary);
+  --clr-button: var(--clr-secondary);
+  --clr-bg-button: var(--clr-primary);
+  --clr-bg-header: var(--clr-tertiary);
+}
+
+
+
+/* fine variabili */
+
+body {
+  background-color: white;
+}
+
+.menu {
+  background-color: var(--clr-bg-header);
+  height: 220px;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  color: var(--clr-link);
+}
+
+.logo {
+  height: 150px;
+  border-radius: 50px;
+}
+
+button {
+  border: none;
+  background-color: var(--clr-bg-button);
+  color: var(--clr-button);
+  border-radius: 100vh;
+  padding: 28px 102px;
+  font-size: var(--fs-button);
+}
