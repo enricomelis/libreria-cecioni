@@ -18,26 +18,49 @@ img, picture, svg, video {
   max-width: 100%;
 }
 
+ul {
+  list-style: none;
+}
+
 /* fine reset */
 
 :root {
-  --fs-400: 2rem;
-  --fs-600: 3rem;
+  /* root variables */
+  --size-200: 1rem;
+  --size-300: 1.5rem;
+  --size-400: 2rem;
+  --size-500: 2.5rem;
+  --size-600: 3rem;
   --clr-primary: hsl(347, 54%, 48%);
   --clr-secondary: white;
   --clr-tertiary: hsl(0, 0%, 85%);
+  --fs-200: var(--size-200);
+  --fs-300: var(--size-300);
+  --fs-400: var(--size-400);
+  --fs-500: var(--size-500);
+  --fs-600: var(--size-600);
+  --ff-primary: 'Inter', sans-serif;
+  --fw-regular: 400;
+  --gap-200: var(--size-200);
 
-  --fs-button: var(--fs-400);
-  --fs-link: var(--fs-400);
-  --fs-title: var(--fs-600);
+  /* font related */
+  --fs-title: var(--fs-500);
+  --ff-title: var(--ff-primary);
+  --fw-title: var(--fw-regular);
+  --fs-button: var(--fs-300);
+  --ff-button: var(--ff-primary);
+  --fw-button: var(--fw-regular);
+  --fs-link: var(--fs-300);
+  --ff-link: var(--ff-primary);
+  --fw-link: var(--fw-regular);
   
+  /* color related */
   --clr-link: var(--clr-primary);
-  --clr-button: var(--clr-secondary);
+  --clr-title: var(--clr-primary);
   --clr-bg-button: var(--clr-primary);
+  --clr-button: var(--clr-secondary);
   --clr-bg-header: var(--clr-tertiary);
 }
-
-
 
 /* fine variabili */
 
@@ -47,12 +70,24 @@ body {
 
 .menu {
   background-color: var(--clr-bg-header);
-  height: 220px;
+  height: 20%;
+  padding: .5%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+header nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-200);
 }
 
 a {
+  font-size: var(--fs-link);
+  font-family: var(--ff-link);
+  font-weight: var(--fw-link);
+
   color: var(--clr-link);
 }
 
@@ -61,11 +96,39 @@ a {
   border-radius: 50px;
 }
 
+
+main h1 {
+  font-size: var(--fs-title);
+  font-family: var(--ff-title);
+  font-weight: var(--fw-title);
+  
+  color: var(--clr-title);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-200);
+}
+
+.request-container {
+  background-color: aqua; /* debugging purposes */
+  width: 50%;
+  min-height: 40vh;
+  border-radius: 10px;
+}
+
 button {
-  border: none;
-  background-color: var(--clr-bg-button);
+font-size: var(--fs-button);
+  font-family: var(--ff-button);
+  font-weight: var(--fw-button);
+
   color: var(--clr-button);
+  background-color: var(--clr-bg-button);
+  
+  width: 20%;
+  border: none;
   border-radius: 100vh;
-  padding: 28px 102px;
-  font-size: var(--fs-button);
+  padding: 20px 51px;
 }

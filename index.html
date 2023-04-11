@@ -4,19 +4,30 @@
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="./logo.jpeg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <title>Libreria Online</title>
   </head>
   <body>
     <header class="menu">
       <img class="logo" src="./img/logo.jpg" alt="logo">
-      <a href="#">Accedi</a>
-      <a href="#">Registrati</a>
+      <nav class="links">
+        <a href="#">Accedi</a>
+        <a href="#">Registrati</a>
+      </nav>
     </header>
 
     <main>
       <h1 class="title">Richieste</h1>
-      <div class="request-list"></div>
+      <div class="request-container">
+        <ul class="request-list">
+          <li class="list-item"></li>
+          <li class="list-item"></li>
+          <li class="list-item"></li>
+        </ul>
+      </div>
       <button class="request">Richiedi un libro</button>
       <button class="availability">Ho un libro</button>
     </main>
