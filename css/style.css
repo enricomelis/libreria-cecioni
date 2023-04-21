@@ -31,9 +31,12 @@ ul {
   --size-400: 2rem;
   --size-500: 2.5rem;
   --size-600: 3rem;
+  --size-1000: 6.25rem;
   --clr-primary: hsl(347, 54%, 48%);
+  --clr-primary-hover: hsl(347, 54%, 38%);
   --clr-secondary: white;
-  --clr-tertiary: hsl(0, 0%, 85%);
+  --clr-tertiary: hsl(0, 0%, 60%);
+  --clr-v-divider: var(--clr-tertiary);
   --fs-200: var(--size-200);
   --fs-300: var(--size-300);
   --fs-400: var(--size-400);
@@ -41,7 +44,6 @@ ul {
   --fs-600: var(--size-600);
   --ff-primary: 'Inter', sans-serif;
   --fw-regular: 400;
-  --gap-200: var(--size-200);
 
   /* font related */
   --fs-title: var(--fs-500);
@@ -50,16 +52,21 @@ ul {
   --fs-button: var(--fs-300);
   --ff-button: var(--ff-primary);
   --fw-button: var(--fw-regular);
-  --fs-link: var(--fs-300);
+  --fs-link: var(--fs-200);
   --ff-link: var(--ff-primary);
   --fw-link: var(--fw-regular);
   
   /* color related */
+  --clr-bg-button: var(--clr-primary);
+  --clr-bg-button-hover: var(--clr-primary-hover);
+  --clr-bg-header: var(--clr-secondary);
   --clr-link: var(--clr-primary);
   --clr-title: var(--clr-primary);
-  --clr-bg-button: var(--clr-primary);
   --clr-button: var(--clr-secondary);
-  --clr-bg-header: var(--clr-tertiary);
+  --clr-p-header: var(--clr-tertiary);
+
+  /* img related */
+  --logo-size: var(--size-1000);
 }
 
 /* fine variabili */
@@ -68,34 +75,62 @@ body {
   background-color: white;
 }
 
+/* header: top menu */
+
 .menu {
   background-color: var(--clr-bg-header);
   height: 20%;
   padding: .5%;
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
   align-items: center;
+  margin-left: var(--size-200);
+  margin-right: var(--size-200);
 }
 
-header nav {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--gap-200);
+header > section {
+  display: flex;
+  align-items: center;
+  gap: var(--size-200);
 }
 
-a {
+header p {
+  color: var(--clr-p-header);
+}
+
+.header-link {
   font-size: var(--fs-link);
   font-family: var(--ff-link);
   font-weight: var(--fw-link);
 
   color: var(--clr-link);
+  text-decoration: none;
 }
 
-.logo {
-  height: 150px;
-  border-radius: 50px;
+.header-logo {
+  aspect-ratio: 1/1;
+  height: var(--logo-size);
 }
 
+.header-nav {
+  display: grid;
+  place-items: center;
+}
+
+.header-nav > svg {
+  height: 25px;
+  width: 25px;
+}
+
+.vertical-divider {
+  background-color: var(--clr-v-divider);
+  height: 30px;
+  width: 1px;
+}
+
+/* main: richieste libro */
 
 main h1 {
   font-size: var(--fs-title);
@@ -109,7 +144,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--gap-200);
+  gap: var(--size-200);
 }
 
 .request-container {
@@ -131,4 +166,9 @@ font-size: var(--fs-button);
   border: none;
   border-radius: 100vh;
   padding: 20px 51px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--clr-bg-button-hover);
 }
